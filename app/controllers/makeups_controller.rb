@@ -1,7 +1,7 @@
 class MakeupsController < ApplicationController
     def index 
         makeups = Makeup.all
-        render json: makeups
+        render json: MakeupSerializer.new(makeups)
     end 
 
     def create
