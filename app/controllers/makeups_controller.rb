@@ -7,15 +7,15 @@ class MakeupsController < ApplicationController
     def create
         makeup = Makeup.new(makeup_params)
         if makeup.save 
-            render json: makeup, status: :accepted
+            render json: MakeupSerializer.new(makeup), status: :accepted
         else
-            render json: {errors: makup.errors.full_messages}, status: :unprocessible_entity
+            render json: {errors: makeup.errors.full_messages}, status: :unprocessible_entity
         end 
     end 
 
     private 
 
     def makeup_params
-        params.require(:makeup).permit(:product_name, :product_type, :skin_type, :brand, :shade)
+        params.require(:makeup).permit(:product_name, :product_type, :skin_type, :skin_tone, :brand, :shade)
     end 
 end
