@@ -1,4 +1,6 @@
 class MakeupSerializer
     include JSONAPI::Serializer
-    attributes :product_name, :product_type, :skin_tone, :skin_type, :brand, :shade, :reviews
+    attributes :product_name, :product_type, :skin_tone, :skin_type, :brand, :shade, :reviewavg, :reviews, :avgreview
+
+
 end 

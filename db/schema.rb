@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_022904) do
+ActiveRecord::Schema.define(version: 2021_01_05_223431) do
 
   create_table "makeups", force: :cascade do |t|
     t.string "product_name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_022904) do
     t.string "shade"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "reviewavg", default: 0
   end
 
   create_table "reviews", force: :cascade do |t|
